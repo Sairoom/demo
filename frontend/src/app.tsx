@@ -21,7 +21,10 @@ export default function App() {
   return (
     <>
       <header className="header">
-        <Link to={home} className="logo">Конференции.РФ</Link>
+        <Link to={home} className="logo">
+          <img src="/logo.jpg" alt="Логотип" />
+          Конференции.РФ
+        </Link>
         {token && (
           <nav className="nav">
             {isAdmin ? (

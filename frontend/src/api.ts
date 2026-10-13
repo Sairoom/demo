@@ -11,6 +11,7 @@ export type Req = {
 }
 
 export const ROOMS = ['Аудитория', 'Коворкинг', 'Кинозал']
+export const ROOM_PHOTOS: Record<string, string> = { 'Аудитория': '/auditoriya.jpg', 'Коворкинг': '/coworking.jpg', 'Кинозал': '/kinozal.jpg' }
 export const PAYMENTS = ['При очном посещении', 'Перевод по СБП']
 export const STATUSES = ['Новая', 'Мероприятие назначено', 'Завершено']
 export const STATUS_CLASS: Record<string, string> = { 'Новая': 'new', 'Мероприятие назначено': 'set', 'Завершено': 'done' }

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api, PAYMENTS, ROOMS } from '../api'
+import { api, PAYMENTS, ROOM_PHOTOS, ROOMS } from '../api'
 import './requests_form.scss'
 
 export default function RequestsForm() {
@@ -32,6 +32,7 @@ export default function RequestsForm() {
             {ROOMS.map((r) => <option key={r}>{r}</option>)}
           </select>
         </label>
+        {room && <img className="requests-form__photo" src={ROOM_PHOTOS[room]} alt={room} />}
         <label className="field">
           Дата начала конференции
           <input type="date" name="start_date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />

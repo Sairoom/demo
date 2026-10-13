@@ -1,11 +1,12 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { api, formatDate, STATUS_CLASS, type Req } from '../api'
+import { api, formatDate, ROOM_PHOTOS, STATUS_CLASS, type Req } from '../api'
 import './requests_view.scss'
 
 export function RequestCard({ req, children }: { req: Req; children?: ReactNode }) {
   return (
     <article className="req">
+      <img className="req__photo" src={ROOM_PHOTOS[req.room]} alt={req.room} />
       <div className="req__top">
         <h3>{req.room}</h3>
         <span className={`badge badge--${STATUS_CLASS[req.status]}`}>{req.status}</span>
