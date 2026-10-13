@@ -1,4 +1,8 @@
 .autorization {
-  margin-top: 40px;
-  &__text { margin: -8px 0 16px; font-size: 14px; color: var(--muted); }
+  width: 100%; max-width: 480px; margin: auto; padding: 40px 32px;
+  h1 { font-size: 30px; text-align: center; }
+  &__text { margin: -8px 0 24px; font-size: 15px; text-align: center; color: var(--muted); }
+  input { padding: 13px 14px; }
+  .btn { padding: 14px; font-size: 17px; }
+  > a { display: block; text-align: center; }
 }
