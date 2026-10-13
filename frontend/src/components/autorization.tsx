@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api'
+import './autorization.scss'
 
-export default function Login() {
+export default function Autorization() {
   const navigate = useNavigate()
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
@@ -22,8 +23,9 @@ export default function Login() {
   }
 
   return (
-    <section className="card">
+    <section className="card autorization">
       <h1>Вход</h1>
+      <p className="autorization__text">Бронирование помещений для Всероссийских конференций</p>
       <form onSubmit={submit} noValidate>
         <label className="field">
           Логин

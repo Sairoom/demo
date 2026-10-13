@@ -1,7 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { api, type Req } from '../api'
-import RequestCard from '../components/RequestCard'
+import { api, formatDate, STATUS_CLASS, type Req } from '../api'
+import './requests_view.scss'
+
+export function RequestCard({ req, children }: { req: Req; children?: ReactNode }) {
+  return (
+    <article className="req">
+      <div className="req__top">
+        <h3>{req.room}</h3>
+        <span className={`badge badge--${STATUS_CLASS[req.status]}`}>{req.status}</span>
+      </div>
+      {req.fio && <p className="muted">{req.fio} · {req.phone} · {req.email}</p>}
+      <p>Дата начала: <b>{formatDate(req.start_date)}</b></p>
+      <p>Оплата: {req.payment}</p>
+      {req.review && <blockquote>«{req.review}»</blockquote>}
+      {children}
+    </article>
+  )
+}
 
 function ReviewForm({ onSend }: { onSend: (text: string) => void }) {
   const [text, setText] = useState('')
@@ -13,7 +29,7 @@ function ReviewForm({ onSend }: { onSend: (text: string) => void }) {
   )
 }
 
-export default function Requests() {
+export default function RequestsView() {
   const [list, setList] = useState<Req[]>([])
   const load = () => api<Req[]>('/requests').then(setList)
 

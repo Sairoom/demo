@@ -1,9 +1,10 @@
 import { Link, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import Register from './pages/Register'
-import Login from './pages/Login'
-import Requests from './pages/Requests'
-import NewRequest from './pages/NewRequest'
-import Admin from './pages/Admin'
+import Registration from './components/registration'
+import Autorization from './components/autorization'
+import RequestsView from './components/requests_view'
+import RequestsForm from './components/requests_form'
+import AdminPanel from './components/admin_panel'
+import './app.scss'
 
 export default function App() {
   useLocation()
@@ -38,11 +39,11 @@ export default function App() {
 
       <main className="main">
         <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/requests" element={token ? <Requests /> : <Navigate to="/login" />} />
-          <Route path="/new" element={token ? <NewRequest /> : <Navigate to="/login" />} />
-          <Route path="/admin" element={isAdmin ? <Admin /> : <Navigate to="/login" />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/login" element={<Autorization />} />
+          <Route path="/requests" element={token ? <RequestsView /> : <Navigate to="/login" />} />
+          <Route path="/new" element={token ? <RequestsForm /> : <Navigate to="/login" />} />
+          <Route path="/admin" element={isAdmin ? <AdminPanel /> : <Navigate to="/login" />} />
           <Route path="*" element={<Navigate to={home} />} />
         </Routes>
       </main>

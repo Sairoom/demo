@@ -1,0 +1,4 @@
+.registration {
+  &__text { margin: -8px 0 16px; font-size: 14px; color: var(--muted); }
+  input::placeholder { color: #a3a9c2; }
+}

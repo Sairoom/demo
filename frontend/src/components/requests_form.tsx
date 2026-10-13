@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { api, PAYMENTS, ROOMS } from '../api'
+import './requests_form.scss'
 
-export default function NewRequest() {
+export default function RequestsForm() {
   const navigate = useNavigate()
   const [room, setRoom] = useState('')
   const [startDate, setStartDate] = useState('')
@@ -21,7 +22,7 @@ export default function NewRequest() {
   }
 
   return (
-    <section className="card">
+    <section className="card requests-form">
       <h1>Новая заявка</h1>
       <form onSubmit={submit} noValidate>
         <label className="field">
@@ -35,10 +36,10 @@ export default function NewRequest() {
           Дата начала конференции
           <input type="date" name="start_date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
         </label>
-        <fieldset className="field">
+        <fieldset className="requests-form__payment">
           Способ оплаты
           {PAYMENTS.map((p) => (
-            <label key={p} className="radio">
+            <label key={p} className="requests-form__radio">
               <input type="radio" name="payment" value={p} checked={payment === p} onChange={() => setPayment(p)} />
               {p}
             </label>

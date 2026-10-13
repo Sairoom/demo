@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api'
+import './registration.scss'
 
 const fields = [
   { name: 'login', label: 'Логин', rule: /^[A-Za-z0-9]{6,}$/, error: 'Латиница и цифры, не менее 6 символов' },
@@ -10,7 +11,7 @@ const fields = [
   { name: 'email', label: 'Email', type: 'email', rule: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, error: 'Неверный формат email' },
 ]
 
-export default function Register() {
+export default function Registration() {
   const navigate = useNavigate()
   const [form, setForm] = useState<Record<string, string>>({})
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -35,8 +36,9 @@ export default function Register() {
   }
 
   return (
-    <section className="card">
+    <section className="card registration">
       <h1>Регистрация</h1>
+      <p className="registration__text">Создайте аккаунт, чтобы бронировать помещения</p>
       <form onSubmit={submit} noValidate>
         {fields.map((f) => (
           <label key={f.name} className="field">

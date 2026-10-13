@@ -21,16 +21,15 @@ npm run dev
 ## Структура
 
 ```
-backend/main.py                  — весь API и база
-frontend/src/api.ts              — запросы к API, константы
-frontend/src/App.tsx             — шапка, меню, маршруты
-frontend/src/pages/Register.tsx  — регистрация
-frontend/src/pages/Login.tsx     — вход
-frontend/src/pages/Requests.tsx  — мои заявки, отзыв, отмена
-frontend/src/pages/NewRequest.tsx — новая заявка
-frontend/src/pages/Admin.tsx     — панель администратора
-frontend/src/components/RequestCard.tsx — карточка заявки
-frontend/src/styles.scss         — все стили
+backend/main.py                              — весь API и база
+frontend/src/main.jsx                        — точка входа
+frontend/src/app.tsx + app.scss              — шапка, меню, маршруты, общие стили
+frontend/src/api.ts                          — запросы к API, константы
+frontend/src/components/registration.*       — регистрация
+frontend/src/components/autorization.*       — вход
+frontend/src/components/requests_view.*      — мои заявки, карточка заявки, отзыв
+frontend/src/components/requests_form.*      — новая заявка
+frontend/src/components/admin_panel.*        — панель администратора
 ```
 
 ---
