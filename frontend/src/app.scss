@@ -30,7 +30,7 @@ a { color: var(--primary); }
 .footer { padding: 16px; text-align: center; font-size: 14px; color: var(--muted); }
 
 .card {
-  max-width: 420px; margin: 0 auto; padding: 28px 24px; background: #fff;
+  width: 100%; max-width: 420px; margin: 0 auto; padding: 28px 24px; background: #fff;
   border-top: 4px solid var(--primary); border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, .06); animation: fade .4s ease;
   form { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
 }
