@@ -1,7 +1,7 @@
 :root {
-  --primary: #3550dc;
-  --primary-dark: #2438a8;
-  --bg: #f3f5fb;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --bg: #f2f7f6;
   --text: #1c2140;
   --muted: #6b7290;
   --error: #d93a3a;
@@ -38,7 +38,7 @@ a { color: var(--primary); }
 input, select, textarea {
   font: inherit; color: var(--text); padding: 10px 12px; background: #fff;
   border: 1px solid #d5d9e8; border-radius: 8px; transition: border-color .2s, box-shadow .2s;
-  &:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(53, 80, 220, .15); }
+  &:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15, 118, 110, .15); }
 }
 .error { font-size: 13px; color: var(--error); }
 .muted { font-size: 14px; color: var(--muted); }
