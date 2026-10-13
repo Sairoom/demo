@@ -1,3 +1,40 @@
+# Конференции.РФ
+
+Портал бронирования помещений для конференций. **Бэкенд:** FastAPI + SQLite (база `app.db` создаётся сама при первом запуске). **Фронтенд:** React + TypeScript + SCSS.
+
+Админ: логин `Conf2027`, пароль `Demo77`.
+
+## Запуск
+
+```bash
+# терминал 1 — бэкенд (http://127.0.0.1:8000, документация API: /docs)
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+# терминал 2 — фронтенд (http://localhost:5173)
+cd frontend
+npm install
+npm run dev
+```
+
+## Структура
+
+```
+backend/main.py                  — весь API и база
+frontend/src/api.ts              — запросы к API, константы
+frontend/src/App.tsx             — шапка, меню, маршруты
+frontend/src/pages/Register.tsx  — регистрация
+frontend/src/pages/Login.tsx     — вход
+frontend/src/pages/Requests.tsx  — мои заявки, отзыв, отмена
+frontend/src/pages/NewRequest.tsx — новая заявка
+frontend/src/pages/Admin.tsx     — панель администратора
+frontend/src/components/RequestCard.tsx — карточка заявки
+frontend/src/styles.scss         — все стили
+```
+
+---
+
 # Установка окружения: React + Laravel + SQLite на М ОС
 
 Пошаговый гайд по установке всего, что нужно для проекта (фронтенд на **React**, бэкенд на **Laravel**, база **SQLite**, по желанию **MySQL/MariaDB**) на **М ОС** — дистрибутиве Linux, сделанном на пакетной базе **Альт Линукс**.
