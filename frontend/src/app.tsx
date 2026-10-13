@@ -4,6 +4,7 @@ import Autorization from './components/autorization'
 import RequestsView from './components/requests_view'
 import RequestsForm from './components/requests_form'
 import AdminPanel from './components/admin_panel'
+import logo from './assets/logo.jpg'
 import './app.scss'
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
     <>
       <header className="header">
         <Link to={home} className="logo">
-          <img src="/logo.jpg" alt="Логотип" />
+          <img src={logo} alt="Логотип" />
           Конференции.РФ
         </Link>
         {token && (
